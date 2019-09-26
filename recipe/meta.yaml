@@ -21,11 +21,11 @@ requirements:
   run:
     - python
     - six
-    - numpy
+    - numpy >=1.15
     - scipy
     - pillow
     - matplotlib
-    - scikit-image
+    - scikit-image >=0.14.2
     - opencv
     - imageio
     - shapely
