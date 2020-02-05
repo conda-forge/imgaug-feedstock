@@ -1,5 +1,5 @@
 {% set name = "imgaug" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e1354d41921f1b306b50c5141b4870f17e81b531cae2f5c3093da9dc4dcb3cf4
+  sha256: 46bab63ed38f8980630ff721a09ca2281b7dbd4d8c11258818b6ebcc69ea46c7
 
 build:
   noarch: python
