@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
@@ -24,7 +24,7 @@ requirements:
     - numpy >=1.15
     - scipy
     - pillow
-    - matplotlib
+    - matplotlib-base
     - scikit-image >=0.14.2
     - opencv
     - imageio
