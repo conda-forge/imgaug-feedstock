@@ -8,6 +8,9 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 46bab63ed38f8980630ff721a09ca2281b7dbd4d8c11258818b6ebcc69ea46c7
+  patches:
+    # opencv doesn't pass the pip check command
+    - remove_opencv_dependency_from_pip.patch
 
 build:
   noarch: python
@@ -16,10 +19,10 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.4
     - pip
   run:
-    - python
+    - python >=3.4
     - six
     - numpy >=1.15
     - scipy
@@ -31,8 +34,12 @@ requirements:
     - shapely
 
 test:
+  requires:
+    - pip
   imports:
     - imgaug
+  commands:
+    - pip check
 
 about:
   home: https://github.com/aleju/imgaug
@@ -52,3 +59,4 @@ extra:
   recipe-maintainers:
     - mdraw
     - aleju
+    - hmaarrfk
